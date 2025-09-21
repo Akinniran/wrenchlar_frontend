@@ -10,7 +10,7 @@ const VehicleHeader: React.FC = () => {
         <img
           src="/assets/landrover-logo.png"
           alt="Land Rover"
-          className="w-16 h-16 rounded-lg object-contain"
+          className="w-20 h-16 rounded-lg object-contain"
         />
 
         {/* Vehicle Info */}
@@ -57,9 +57,9 @@ const VehicleHeader: React.FC = () => {
         {/* Dealer Info */}
         <div className="flex items-center space-x-2 mt-2">
           <img
-            src="/assets/dealer-avatar.jpg"
+            src="/assets/company-logo.png"
             alt="Dealer"
-            className="w-8 h-8 rounded-full"
+            className="w-14 h-10 rounded-full"
           />
           <div>
             <p className="text-sm font-semibold text-gray-800">

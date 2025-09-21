@@ -6,8 +6,11 @@ const Header: React.FC = () => {
     <header className="flex items-center justify-between px-6 py-5 bg-white">
 
       {/* Center - Logo */}
-      <div className="hidden md:block">
+      <div className="hidden md:flex items-center">
         <img src="/assets/wrenchlar-logo.png" alt="Wrenchlar" className="h-6" />
+        <span className="text-2xl font-bold text-gray-600">
+          renchlar
+        </span>
       </div>
 
       {/* Middle - Search */}
@@ -38,7 +41,7 @@ const Header: React.FC = () => {
         </button>
         <div className="flex items-center space-x-2 cursor-pointer">
           <img
-            src="/assets/user-avatar.jpg" // replace with actual profile image
+            src="/assets/user-avatar.png"
             alt="User Avatar"
             className="w-8 h-8 rounded-full"
           />

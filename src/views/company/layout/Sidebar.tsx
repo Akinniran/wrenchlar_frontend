@@ -25,7 +25,7 @@ export default function Sidebar() {
         <img
           src="/assets/company-logo.png"
           alt="Company Logo"
-          className="w-12 h-12 rounded-full"
+          className="w-16 h-12 rounded-full"
         />
         <div className="pl-2 space-y-2">
           <h2 className="font-semibold text-gray-900">Coscharis Motors</h2>
