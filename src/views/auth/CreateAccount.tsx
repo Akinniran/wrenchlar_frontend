@@ -17,10 +17,16 @@ const CreateAccount: React.FC = () => {
         <div className="absolute inset-0 bg-[url('/images/bg-pattern.png')] opacity-30" />
         <div className="relative z-10 px-12">
           <div className="flex items-center mb-8">
-            <span className="text-4xl font-extrabold text-white mr-2">
-              <span className="text-[#8fd32a]">W</span>
-              renchlar
-            </span>
+            <div className="hidden md:flex items-center">
+              <img
+                src="/assets/wrenchlar-logo.png"
+                alt="Wrenchlar"
+                className="h-10"
+              />
+              <span className="text-3xl font-bold text-white dark:text-gray-300">
+                renchlar
+              </span>
+            </div>
           </div>
           <h2 className="text-white text-2xl font-bold mb-4">
             Building the Future...

@@ -15,10 +15,16 @@ const LoginAccount: React.FC = () => {
         <div className="absolute inset-0 bg-[url('/images/bg-pattern.png')] opacity-30" />
         <div className="relative z-10 px-12">
           <div className="flex items-center mb-8">
-            <span className="text-4xl font-extrabold text-white mr-2">
-              <span className="text-[#8fd32a]">W</span>
-              renchlar
-            </span>
+            <div className="hidden md:flex items-center">
+              <img
+                src="/assets/wrenchlar-logo.png"
+                alt="Wrenchlar"
+                className="h-10"
+              />
+              <span className="text-3xl font-bold text-white dark:text-gray-300">
+                renchlar
+              </span>
+            </div>
           </div>
           <h2 className="text-white text-2xl font-bold mb-4">
             Building the Future...
@@ -62,9 +68,9 @@ const LoginAccount: React.FC = () => {
               <label
                 htmlFor="email"
                 className={`absolute left-3 text-gray-400 dark:text-gray-300 transition-all bg-white dark:bg-gray-800 px-1 ${
-                  email || emailFocused 
-                    ? '-top-2 text-sm text-[#8fd32a]' 
-                    : 'top-5 text-base'
+                  email || emailFocused
+                    ? "-top-2 text-sm text-[#8fd32a]"
+                    : "top-5 text-base"
                 }`}
               >
                 Email
@@ -86,9 +92,9 @@ const LoginAccount: React.FC = () => {
               <label
                 htmlFor="password"
                 className={`absolute left-3 text-gray-400 dark:text-gray-300 transition-all bg-white dark:bg-gray-800 px-1 ${
-                  password || passwordFocused 
-                    ? '-top-2 text-sm text-[#8fd32a]' 
-                    : 'top-5 text-base'
+                  password || passwordFocused
+                    ? "-top-2 text-sm text-[#8fd32a]"
+                    : "top-5 text-base"
                 }`}
               >
                 Password
@@ -158,7 +164,9 @@ const LoginAccount: React.FC = () => {
           {/* Divider */}
           <div className="flex items-center my-8">
             <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
-            <span className="mx-4 text-gray-400 dark:text-gray-300 font-semibold">Or</span>
+            <span className="mx-4 text-gray-400 dark:text-gray-300 font-semibold">
+              Or
+            </span>
             <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
           </div>
 
