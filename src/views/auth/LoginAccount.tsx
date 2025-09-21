@@ -3,9 +3,13 @@ import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
 
 const LoginAccount: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailFocused, setEmailFocused] = useState(false);
+  const [passwordFocused, setPasswordFocused] = useState(false);
 
   return (
-    <div className="min-h-screen flex overflow-hidden">
+    <div className="min-h-screen flex overflow-hidden bg-white dark:bg-gray-900">
       {/* Left Section */}
       <div className="md:flex w-1/2 bg-gradient-to-br from-[#4e6e1f] to-[#2e3c1a] relative items-center justify-center">
         <div className="absolute inset-0 bg-[url('/images/bg-pattern.png')] opacity-30" />
@@ -32,13 +36,13 @@ const LoginAccount: React.FC = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex-1 flex items-center justify-center bg-white">
+      <div className="flex-1 flex items-center justify-center bg-white dark:bg-gray-900">
         <div className="w-full max-w-lg px-6 py-12">
           <div className="mb-8">
-            <p className="text-sm text-gray-900 font-medium mb-1">
+            <p className="text-sm text-gray-900 dark:text-gray-100 font-medium mb-1">
               WELCOME BACK
             </p>
-            <h1 className="text-3xl font-semibold text-gray-900">
+            <h1 className="text-3xl font-semibold text-gray-900 dark:text-white">
               Login to Account
             </h1>
           </div>
@@ -48,13 +52,20 @@ const LoginAccount: React.FC = () => {
               <input
                 id="email"
                 type="email"
-                defaultValue=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onFocus={() => setEmailFocused(true)}
+                onBlur={() => setEmailFocused(false)}
                 placeholder="Email"
-                className="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8fd32a] text-gray-900 placeholder-transparent"
+                className="peer w-full px-4 pt-5 pb-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8fd32a] text-gray-900 dark:text-white placeholder-transparent bg-white dark:bg-gray-800"
               />
               <label
                 htmlFor="email"
-                className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#8fd32a] bg-white px-1"
+                className={`absolute left-3 text-gray-400 dark:text-gray-300 transition-all bg-white dark:bg-gray-800 px-1 ${
+                  email || emailFocused 
+                    ? '-top-2 text-sm text-[#8fd32a]' 
+                    : 'top-5 text-base'
+                }`}
               >
                 Email
               </label>
@@ -65,19 +76,27 @@ const LoginAccount: React.FC = () => {
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onFocus={() => setPasswordFocused(true)}
+                onBlur={() => setPasswordFocused(false)}
                 placeholder="Password"
-                className="peer w-full px-4 pt-5 pb-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8fd32a] text-gray-900 placeholder-transparent pr-12"
+                className="peer w-full px-4 pt-5 pb-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8fd32a] text-gray-900 dark:text-white placeholder-transparent pr-12 bg-white dark:bg-gray-800"
               />
               <label
                 htmlFor="password"
-                className="absolute left-3 top-3 text-gray-400 transition-all peer-placeholder-shown:top-5 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#8fd32a] bg-white px-1"
+                className={`absolute left-3 text-gray-400 dark:text-gray-300 transition-all bg-white dark:bg-gray-800 px-1 ${
+                  password || passwordFocused 
+                    ? '-top-2 text-sm text-[#8fd32a]' 
+                    : 'top-5 text-base'
+                }`}
               >
                 Password
               </label>
               {/* Eye Button */}
               <button
                 type="button"
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300"
                 tabIndex={-1}
                 onClick={() => setShowPassword((v) => !v)}
               >
@@ -138,35 +157,35 @@ const LoginAccount: React.FC = () => {
 
           {/* Divider */}
           <div className="flex items-center my-8">
-            <div className="flex-1 h-px bg-gray-200" />
-            <span className="mx-4 text-gray-400 font-semibold">Or</span>
-            <div className="flex-1 h-px bg-gray-200" />
+            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
+            <span className="mx-4 text-gray-400 dark:text-gray-300 font-semibold">Or</span>
+            <div className="flex-1 h-px bg-gray-200 dark:bg-gray-700" />
           </div>
 
           {/* Social Buttons */}
           <div className="space-y-3 mb-8">
-            <button className="w-full flex items-center px-4 py-3 border border-gray-200 rounded-md hover:bg-gray-50 transition">
+            <button className="w-full flex items-center px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition bg-white dark:bg-gray-900">
               <FaGoogle className="text-lg mr-3 text-[#EA4335]" />
-              <span className="flex-1 text-left text-gray-700 font-medium">
+              <span className="flex-1 text-left text-gray-700 dark:text-gray-300 font-medium">
                 Login with Google
               </span>
             </button>
-            <button className="w-full flex items-center px-4 py-3 border border-gray-200 rounded-md hover:bg-gray-50 transition">
+            <button className="w-full flex items-center px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition bg-white dark:bg-gray-900">
               <FaFacebookF className="text-lg mr-3 text-[#1877F3]" />
-              <span className="flex-1 text-left text-gray-700 font-medium">
+              <span className="flex-1 text-left text-gray-700 dark:text-gray-300 font-medium">
                 Login with Facebook
               </span>
             </button>
-            <button className="w-full flex items-center px-4 py-3 border border-gray-200 rounded-md hover:bg-gray-50 transition">
-              <FaApple className="text-lg mr-3 text-black" />
-              <span className="flex-1 text-left text-gray-700 font-medium">
+            <button className="w-full flex items-center px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition bg-white dark:bg-gray-900">
+              <FaApple className="text-lg mr-3 text-black dark:text-white" />
+              <span className="flex-1 text-left text-gray-700 dark:text-gray-300 font-medium">
                 Login with Apple
               </span>
             </button>
           </div>
 
           {/* Signup Link */}
-          <div className="mt-6 text-center text-sm text-gray-500">
+          <div className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
             Don't have an account?{" "}
             <a
               href="/register"

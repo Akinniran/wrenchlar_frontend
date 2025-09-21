@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import CreateAccount from "./views/auth/CreateAccount";
 import LoginAccount from "./views/auth/LoginAccount";
 import VehiclesHomePage from "./views/company/vehicles/VehiclesHomePage";
@@ -19,7 +20,8 @@ import WorkshopView from "./views/company/Workshops/WorkshopView";
 
 function App() {
   return (
-    <Router>
+    <ThemeProvider>
+      <Router>
       <Routes>
         <Route path="/register" element={<CreateAccount />} />
         <Route path="/login" element={<LoginAccount />} />
@@ -46,6 +48,7 @@ function App() {
         <Route path="/workshopdetails" element={<WorkshopView />} />
       </Routes>
     </Router>
+    </ThemeProvider>
   );
 }
 
