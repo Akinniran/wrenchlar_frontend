@@ -10,7 +10,7 @@ const VehicleOverview: React.FC = () => {
       {/* Vehicle Header */}
       <VehicleHeader />
       {/* Main Content */}
-      <div className="p-6 space-y-6">
+      <div className="py-6 space-y-6">
         {/* Tabs */}
         <div className="flex space-x-8 border-b border-gray-200">
           {["Overview", "Job Cards", "Issues"].map((tab, idx) => (

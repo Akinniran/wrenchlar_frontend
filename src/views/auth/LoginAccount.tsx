@@ -5,7 +5,7 @@ const LoginAccount: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex overflow-hidden">
       {/* Left Section */}
       <div className="md:flex w-1/2 bg-gradient-to-br from-[#4e6e1f] to-[#2e3c1a] relative items-center justify-center">
         <div className="absolute inset-0 bg-[url('/images/bg-pattern.png')] opacity-30" />
@@ -144,7 +144,7 @@ const LoginAccount: React.FC = () => {
           </div>
 
           {/* Social Buttons */}
-          <div className="space-y-3 mb-36">
+          <div className="space-y-3 mb-8">
             <button className="w-full flex items-center px-4 py-3 border border-gray-200 rounded-md hover:bg-gray-50 transition">
               <FaGoogle className="text-lg mr-3 text-[#EA4335]" />
               <span className="flex-1 text-left text-gray-700 font-medium">
@@ -166,7 +166,7 @@ const LoginAccount: React.FC = () => {
           </div>
 
           {/* Signup Link */}
-          <div className="mt-16 text-center text-sm text-gray-500">
+          <div className="mt-6 text-center text-sm text-gray-500">
             Don't have an account?{" "}
             <a
               href="/register"

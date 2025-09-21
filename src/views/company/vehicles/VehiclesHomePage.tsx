@@ -66,14 +66,14 @@ const statusDot: Record<string, string> = {
 const VehiclesHomePage: React.FC = () => {
   return (
     <Layout>    
-    <div className="p-2 bg-[#f9fafb] min-h-screen">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold text-gray-900 flex items-center">
           Vehicles
           <span className="ml-2 px-2 py-0.5 text-xs rounded-full bg-gray-100 text-gray-500 font-medium">Learn</span>
         </h2>
-        <button className="bg-[#8fd32a] hover:bg-[#7bb022] text-white px-5 py-2 rounded-md font-semibold text-sm transition">
+        <button className="bg-[#8fd32a] hover:bg-[#7bb022] text-white px-5 py-1.5 rounded-md font-semibold text-sm transition">
           + Add Vehicle
         </button>
       </div>
