@@ -143,7 +143,7 @@ const VehiclesHomePage: React.FC = () => {
       <div className="bg-white rounded-lg shadow-sm overflow-x-auto">
         <table className="min-w-full text-sm">
           <thead>
-            <tr className="text-gray-500 border-b">
+            <tr className="text-gray-500 border-b border-gray-300">
               <th className="py-3 px-4 text-left font-semibold">Name</th>
               <th className="py-3 px-4 text-left font-semibold">License Plate</th>
               <th className="py-3 px-4 text-left font-semibold">Year</th>
